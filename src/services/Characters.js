@@ -10,7 +10,7 @@ const useCharacters = () => {
       setCharacters(characters);
       setLoading(false);
     });
-  });
+  }, []);
 
   return { loading, characters };
 };
