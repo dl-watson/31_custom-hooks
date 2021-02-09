@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import titleCase from "../../utils/titleCase";
 import uuid from "react-uuid";
@@ -9,7 +10,9 @@ const List = ({ characters }) => {
     return (
       <li key={uuid()}>
         {titleCase(character.pokemon)}
-        <img src={character.url_image} alt={titleCase(character.pokemon)} />
+        <Link to={`/details/${character.pokemon}`}>
+          <img src={character.url_image} alt={titleCase(character.pokemon)} />
+        </Link>
       </li>
     );
   });
