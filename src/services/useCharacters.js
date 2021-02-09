@@ -4,15 +4,23 @@ import fetchCharacters from "../utils/fetchCharacters";
 const useCharacters = () => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
+  const [activePage, setActivePage] = useState(1);
 
-  useEffect(() => {
-    fetchCharacters().then((characters) => {
-      setCharacters(characters);
-      setLoading(false);
-    });
-  }, []);
+  const handleClick = (pageNumber) => {
+    setActivePage(pageNumber);
+  };
 
-  return { loading, characters };
+  useEffect(
+    (activePage) => {
+      fetchCharacters(activePage).then((characters) => {
+        setCharacters(characters);
+        setLoading(false);
+      });
+    },
+    [activePage]
+  );
+
+  return { loading, characters, activePage, handleClick };
 };
 
 export default useCharacters;
