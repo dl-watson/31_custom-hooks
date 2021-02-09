@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
+import fetchCharacterByName from "../utils/fetchCharacterByName";
 
-const characterByName = () => {
+const useCharacterByName = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [character, setCharacter] = useState([]);
+  const name = match.params.name;
 
-  // useEffect will return fetchCharacterByName
+  useEffect(() => {
+    fetchCharacterByName(name).then((character) => {
+      setCharacter(character);
+      setLoading(false);
+    });
+  }, []);
 
-  // return loading, character
+  return { loading, character };
 };
 
-export default characterByName;
+export default useCharacterByName;
