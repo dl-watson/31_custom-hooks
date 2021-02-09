@@ -9,7 +9,7 @@ const List = ({ characters }) => {
     return (
       <li key={uuid()}>
         {titleCase(character.pokemon)}
-        <img src={character.url_image} />
+        <img src={character.url_image} alt={titleCase(character.pokemon)} />
       </li>
     );
   });
