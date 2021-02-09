@@ -7,7 +7,7 @@ const ItemDetails = ({ character }) => {
   [character] = character;
   return (
     <main className={styles.ItemDetails}>
-      <heading>{titleCase(character.pokemon)}</heading>
+      <article>{titleCase(character.pokemon)}</article>
       <img src={character.url_image} alt={titleCase(character.pokemon)} />
       <section className={styles.details}>
         <p>Height: {character.height}</p>
