@@ -1,10 +1,11 @@
 import React from "react";
+import List from "../components/list/List";
+import useCharacters from "../services/Characters";
 
 const Main = () => {
-  // extract state here into a custom Hook
-  // state: characters, loading
-  // if loading === true, return a loading notification
-  // if loading === false, return a List element
+  const { loading, characters } = useCharacters();
+
+  return loading ? <>Loading...</> : <List characters={characters} />;
 };
 
 export default Main;
