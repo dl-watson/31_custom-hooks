@@ -1,11 +1,15 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import useCharacterByName from "../../services/useCharacterByName";
 
 const Details = () => {
-  // will use another custom hook to:
-  // intialize state: character, loading
-  // useEffect, returning a new fetch by character name
+  const { name } = useParams();
+  const { loading, character } = useCharacterByName(name);
+
+  console.log(character);
+
   // loading ? loading... : ItemDetails
+  return <></>;
 };
 
 export default Details;
