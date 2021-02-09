@@ -10,15 +10,12 @@ const useCharacters = () => {
     setActivePage(pageNumber);
   };
 
-  useEffect(
-    (activePage) => {
-      fetchCharacters(activePage).then((characters) => {
-        setCharacters(characters);
-        setLoading(false);
-      });
-    },
-    [activePage]
-  );
+  useEffect(() => {
+    fetchCharacters(activePage).then((characters) => {
+      setCharacters(characters);
+      setLoading(false);
+    });
+  }, [activePage]);
 
   return { loading, characters, activePage, handleClick };
 };
