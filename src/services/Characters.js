@@ -8,3 +8,4 @@ const useCharacters = () => {
 
   return { loading, characters };
 };
+const [loading, setLoading] = useState(true);
