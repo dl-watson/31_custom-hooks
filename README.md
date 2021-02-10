@@ -6,7 +6,7 @@ Get a list of things from an API and display them.
 
 ## APIs
 
-- [Animal Crossing](https://github.com/yaycub/acnh-villager-api)
+- [Alchemy Pokedex](https://pokedex-alchemy.herokuapp.com/api/pokedex)
 
 ## Requirements
 
