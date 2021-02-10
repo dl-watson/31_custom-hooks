@@ -8,6 +8,7 @@ const useCharacters = () => {
 
   const handleClick = (pageNumber) => {
     setActivePage(pageNumber);
+    console.log(pageNumber);
   };
 
   useEffect(() => {
