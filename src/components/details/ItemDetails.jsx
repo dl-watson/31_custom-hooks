@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import titleCase from "../../utils/titleCase";
 import styles from "./styles/ItemDetails.css";
+import { useTheme } from "../../providers/ThemeContext";
 
 const ItemDetails = ({ character }) => {
+  const { themeStyles } = useTheme();
+
   [character] = character;
   return (
-    <main className={styles.ItemDetails}>
+    <main className={styles.ItemDetails} style={themeStyles}>
       <article>{titleCase(character.pokemon)}</article>
       <img src={character.url_image} alt={titleCase(character.pokemon)} />
       <section className={styles.details}>

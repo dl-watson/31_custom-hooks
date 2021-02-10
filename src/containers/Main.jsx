@@ -3,20 +3,17 @@ import List from "../components/list/List";
 import useCharacters from "../services/useCharacters";
 import Pagination from "react-js-pagination";
 import styles from "./styles/Main.css";
+import { useTheme } from "../providers/ThemeContext";
 
 const Main = () => {
   const { loading, characters, activePage, handleClick } = useCharacters();
-
-  // useContext refactor: Main.jsx should display a button that can toggle between light and dark modes
-  // to accomplish this, we'll create a context elsewhere and import it into this file
-  // the only thing that we'll end up using in this terminating component is a handler, like setTheme
-  // the theme will be exported to the Details component, which is not a child of Main.jsx
+  const { themeStyles, toggleTheme } = useTheme();
 
   return loading ? (
     <>Loading...</>
   ) : (
     <>
-      <section className={styles.Main}>
+      <section className={styles.Main} style={themeStyles}>
         <Pagination
           activePage={activePage}
           totalItemsCount={801}
@@ -27,8 +24,11 @@ const Main = () => {
           prevPageText="prev"
           nextPageText="next"
         />
+        <button onClick={toggleTheme} className={styles.toggleButton}>
+          Toggle Theme
+        </button>
       </section>
-      <List characters={characters} />
+      <List characters={characters} themeStyles={themeStyles} />
     </>
   );
 };

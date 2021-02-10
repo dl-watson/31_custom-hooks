@@ -5,7 +5,7 @@ import titleCase from "../../utils/titleCase";
 import uuid from "react-uuid";
 import styles from "./styles/List.css";
 
-const List = ({ characters }) => {
+const List = ({ characters, themeStyles }) => {
   const characterList = characters.map((character) => {
     return (
       <li key={uuid()}>
@@ -17,11 +17,16 @@ const List = ({ characters }) => {
     );
   });
 
-  return <ul className={styles.List}>{characterList}</ul>;
+  return (
+    <ul className={styles.List} style={themeStyles}>
+      {characterList}
+    </ul>
+  );
 };
 
 List.propTypes = {
   characters: PropTypes.array,
+  themeStyles: PropTypes.object,
 };
 
 export default List;
