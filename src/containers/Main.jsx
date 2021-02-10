@@ -10,18 +10,20 @@ const Main = () => {
   return loading ? (
     <>Loading...</>
   ) : (
-    <section className={styles.Main}>
-      <Pagination
-        activePage={activePage}
-        totalItemsCount={801}
-        onChange={handleClick}
-        firstPageText="first"
-        lastPageText="last"
-        prevPageText="prev"
-        nextPageText="next"
-      />
+    <>
+      <section className={styles.Main}>
+        <Pagination
+          activePage={activePage}
+          totalItemsCount={801}
+          onChange={handleClick}
+          firstPageText="first"
+          lastPageText="last"
+          prevPageText="prev"
+          nextPageText="next"
+        />
+      </section>
       <List characters={characters} />
-    </section>
+    </>
   );
 };
 
