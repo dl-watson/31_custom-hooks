@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Main from "../../containers/Main";
-import Details from "../details/Details";
+import Main from "../../pages/Main";
+import Details from "../../pages/Details";
 import { ThemeProvider } from "../../providers/ThemeContext";
 
 const App = () => {
