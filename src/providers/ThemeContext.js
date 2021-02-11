@@ -8,11 +8,11 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
 
   const themeStyles = {
-    backgroundColor: darkTheme ? "#333" : "#CCC",
-    color: darkTheme ? "#CCC" : "#333",
+    backgroundColor: darkTheme ? "#444b4d" : "#d4d0cf",
+    color: darkTheme ? "#d4d0cf" : "#444b4d",
   };
 
   const toggleTheme = () => {
