@@ -1,13 +1,13 @@
 import React from "react";
-import List from "../components/list/List";
-import useCharacters from "../services/useCharacters";
 import Pagination from "react-js-pagination";
-import styles from "./styles/Main.css";
+import List from "../components/list/List";
 import { useTheme } from "../providers/ThemeContext";
+import useCharacters from "../services/useCharacters";
+import styles from "./styles/Main.css";
 
 const Main = () => {
   const { loading, characters, activePage, handleClick } = useCharacters();
-  const { themeStyles, toggleTheme } = useTheme();
+  const { themeStyles } = useTheme();
 
   return loading ? (
     <>Loading...</>
@@ -24,9 +24,6 @@ const Main = () => {
           prevPageText="prev"
           nextPageText="next"
         />
-        <button onClick={toggleTheme} className={styles.toggleButton}>
-          Toggle Theme
-        </button>
       </section>
       <List characters={characters} themeStyles={themeStyles} />
     </>

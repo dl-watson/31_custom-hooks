@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "../../pages/Main";
 import Details from "../../pages/Details";
 import { ThemeProvider } from "../../providers/ThemeContext";
+import Header from "../header/Header";
 
 const App = () => {
   return (
     <ThemeProvider>
+      <Header />
       <Router>
         <Switch>
           <Route path="/" exact component={Main} />
