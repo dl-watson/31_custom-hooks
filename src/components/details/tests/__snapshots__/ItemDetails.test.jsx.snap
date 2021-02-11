@@ -4,6 +4,7 @@ exports[`ItemDetails component renders ItemDetails 1`] = `
 <DocumentFragment>
   <main
     class="ItemDetails"
+    style="background-color: rgb(212, 208, 207); color: rgb(68, 75, 77);"
   >
     <article>
       Pokemon
