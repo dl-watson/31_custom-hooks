@@ -5,8 +5,9 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import characterByName from "../../../fixtures/characterByName.json";
+import characterByName from "../../fixtures/characterByName.json";
 import Details from "../Details";
+import { ThemeProvider } from "../../providers/ThemeContext";
 
 const server = setupServer(
   rest.get(
@@ -23,9 +24,11 @@ describe("tests container for behaviors", () => {
 
   it("tests the Details screen renders, displays a loading notification, and then loads data from the API as expected", () => {
     render(
-      <Router>
-        <Details />
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <Details />
+        </Router>
+      </ThemeProvider>
     );
 
     screen.getByText("Loading...");
