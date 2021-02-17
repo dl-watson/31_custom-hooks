@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `
+exports[`Header component renders Header 1`] = `
 <DocumentFragment>
   <header
     class="Header"
@@ -10,6 +10,5 @@ exports[`App component renders App 1`] = `
       Toggle Theme
     </button>
   </header>
-  Loading...
 </DocumentFragment>
 `;

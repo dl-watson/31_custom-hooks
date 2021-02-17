@@ -1,16 +1,19 @@
 global.fetch = require("node-fetch");
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import ItemDetails from "../ItemDetails";
+import Header from "../Header";
 import { ThemeProvider } from "../../../providers/ThemeContext";
+import { MemoryRouter as Router } from "react-router-dom";
 
-describe("ItemDetails component", () => {
+describe("Header component", () => {
   afterEach(() => cleanup());
-  it("renders ItemDetails", () => {
+  it("renders Header", () => {
     const { asFragment } = render(
-      <ThemeProvider>
-        <ItemDetails character={[{ pokemon: "pokemon" }]} />
-      </ThemeProvider>
+      <Router>
+        <ThemeProvider>
+          <Header />
+        </ThemeProvider>
+      </Router>
     );
     expect(asFragment()).toMatchSnapshot();
   });
