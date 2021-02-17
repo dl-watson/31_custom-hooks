@@ -8,4 +8,11 @@ padding: 40px;
     button {
         padding: 20px;
     }
+
+    .navigation {
+        padding: 200px;
+        background-color: red;
+        margin: 20px;
+        font-size: 3rem;
+    }
 }

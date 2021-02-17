@@ -8,8 +8,8 @@ import Header from "../header/Header";
 const App = () => {
   return (
     <ThemeProvider>
-      <Header />
       <Router>
+        <Header component={Header} />
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/details/:name" component={Details} />
